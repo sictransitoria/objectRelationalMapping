@@ -1,3 +1,4 @@
+var app = require('./app');
 var connectionString;
 
 // Function to Initialize Connection String
@@ -6,7 +7,6 @@ const initialize = function (user, password, db){
 	return connectionString;
 };
 
-app.get('/', (req, res) => {
 const getAll = function(cb){
   const client = new Client({
   	connectionString: connectionString,
@@ -21,31 +21,22 @@ const getAll = function(cb){
   
     .then((result) => {
     return res.render('test_user', {result})
-  
   })
- }
-});
+};
 
-const getById = function(cb, id) {
+const findById = function(cb, id) {
   const client = new Client({
-  	connectionString: connectionString,
+    connectionString: connectionString,
 
   })
 
   client.connect()
   .then(() => {
-  	return client.query (`SELECT * FROM test_user WHERE id=$1`, [req.params.id]);
+    return client.query(`SELECT * FROM students WHERE id=$1`, [req.params.id]);
   
   })
   
     .then((result) => {
-    return res.render('testusers', {result})
-  
-  })
-
+    return res.render('test_user', {result});
+ })
 };
-
-app.use(getAll);
-app.use(getByID);
-
-

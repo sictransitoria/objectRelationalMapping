@@ -38,6 +38,8 @@ app.get('*', (req, res) => {
 app.use(getAll);
 app.use(getByID);
 
+module.exports = app;
+
 // Loud and Clear
 app.listen(PORT, () => {
 	console.log('Listening on port:', PORT)
