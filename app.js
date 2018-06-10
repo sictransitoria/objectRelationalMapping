@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 // Initialize Function
 let objectRelational = require('./orm-lite')
-objectRelational.initialize();
+objectRelational. initialize();
 
 // Create a new Express Application
 const app = express();
