@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-family: Avenir Next, Arial, sans-serif;
+
 }
 
-a {
-  color: #00B7FF;
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0px 60px 10px 60px;
+
 }
+
+h1 {
+	font-weight: 100;
+	font-size: 80px;
+
+}
+

@@ -1,13 +1,16 @@
-var app = require('./app');
+const {Client} = require('pg');
+const tab = require('./model/db').table
+
 var connectionString;
 
 // Function to Initialize Connection String
 const initialize = function (user, password, db){
-	connectionString = 'postgresql://postgres:Runner4life!@localhost:5432/test_user';
+	connectionString = 'postgresql://postgres:Runner4life!@localhost:5432/testusers';
 	return connectionString;
 };
 
 const getAll = function(cb){
+  console.log(tab);
   const client = new Client({
   	connectionString: connectionString,
 
@@ -20,11 +23,12 @@ const getAll = function(cb){
   })
   
     .then((result) => {
-    return res.render('test_user', {result})
+    console.log(result);
+    return cb(result);
   })
 };
 
-const findById = function(cb, id) {
+const findById = function(id, cb) {
   const client = new Client({
     connectionString: connectionString,
 
@@ -37,6 +41,9 @@ const findById = function(cb, id) {
   })
   
     .then((result) => {
-    return res.render('test_user', {result});
+    console.log(result);
+    return cb(result);
  })
 };
+
+module.exports = {initialize, getAll, findById};

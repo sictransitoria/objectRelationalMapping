@@ -2,37 +2,18 @@
 	<html>
 		<head>
 			<title>Object Relational Mapping</title>
-			<link rel="stylesheet" type="text/css" href="../style.css">
+			<link rel="stylesheet" type="text/css" href="../stylesheets/style.css">
 		</head>
 
-		<body>
+	<body>
+		<div class="flex-container">
 			<h1>List of Users</h1>
-					<table>
-						<tr>
-							<th>ID:</th>
-							<th>First Name:</th>
-							<th>Last Name:</th>
-						</tr>
-						
-						<% for(let i in result.rows) {%>
-
-							<tr>
-								<td><%=  result.rows[i].id  %></td>
-								<td><%=  result.rows[i].name  %></td>
-								<td><%=  result.rows[i].email  %></td>
-
-								<form method='GET' action='/edit/test_user/<%= result.rows[i].id %>' >
-									<td><button class="btn-edit">  EDIT  </button></td>
-								</form>
-
-								<form method='POST' action='/delete/test_user/<%= result.rows[i].id %>' >
-								<td><button class="btn-delete">  DELETE  </button></td>
-								</form>
-							</tr>
-						
-						<% } %>
-					
-					</table>
-				</form>
-		</body>
-	</html>
+				<% for(let i in rows){ %>
+					<p><label>ID:  </label><span> <%=rows[i].id %> </span></p>
+					<p><label>Name:  </label><span> <%= (rows[i].firstname) %> <%=rows[i].lastname %> </span></a></p>
+		<hr>
+	
+			<% } %>
+		</div>
+	</body>
+</html>

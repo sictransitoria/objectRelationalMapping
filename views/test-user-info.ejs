@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Information</title>
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+<h1><u>This is the User's Information Using My ORM-Lite</u></h1>
+	
+	<p><label>ID: </label> <span><%= row.id %></span></p>
+	<p><label>Name: </label> <span><%= row.firstname %> <%=row.lastname.toUpperCase() %></span></p>
+	<hr>
+
+<a href="/"><button>All Users</button></a>
+</body>
+</html>
