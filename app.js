@@ -26,7 +26,7 @@ app.get('/', (req,res) => {
 app.get('/testusers/:id', (req,res) => {
 	let id = req.params.id; 
 	objectRelational.findById(id, (result) => {
-		return res.render('test-user-info', {row: result.rows[0]})
+		return res.render('testusers', {row: result.rows[0]})
 	})
 });
 

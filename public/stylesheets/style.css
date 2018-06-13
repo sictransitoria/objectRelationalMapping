@@ -6,14 +6,18 @@ body {
 .flex-container {
 	display: flex;
 	flex-direction: column;
-	width: 80%;
-	margin: 0px 60px 10px 60px;
 
 }
 
 h1 {
-	font-weight: 100;
+	font-weight: 800;
 	font-size: 80px;
+
+}
+
+p {
+	font-weight: 100;
+	font-size: 30px;
 
 }
 

@@ -36,7 +36,7 @@ const findById = function(id, cb) {
 
   client.connect()
   .then(() => {
-    return client.query(`SELECT * FROM students WHERE id=$1`, [req.params.id]);
+    return client.query(`SELECT * FROM test_user WHERE id=$1`, [req.params.id]);
   
   })
   
